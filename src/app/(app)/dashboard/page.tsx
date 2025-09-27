@@ -99,7 +99,7 @@ const advertiserTransactions = [
 
 const AffiliateDashboard = () => (
     <div className="flex flex-col gap-6">
-      <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Revenue</CardTitle>
@@ -150,7 +150,7 @@ const AffiliateDashboard = () => (
         </Card>
       </div>
       <Card>
-        <CardHeader className="flex flex-row items-center">
+        <CardHeader className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <div className="grid gap-2">
             <CardTitle>Recent Payouts &amp; Withdrawals</CardTitle>
             <CardDescription>
@@ -208,7 +208,7 @@ const AffiliateDashboard = () => (
 
 const AdvertiserDashboard = () => (
     <div className="flex flex-col gap-6">
-      <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Account Balance</CardTitle>
@@ -259,7 +259,7 @@ const AdvertiserDashboard = () => (
         </Card>
       </div>
       <Card>
-        <CardHeader className="flex flex-row items-center">
+        <CardHeader className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <div className="grid gap-2">
             <CardTitle>Recent Account Activity</CardTitle>
             <CardDescription>
@@ -319,14 +319,14 @@ const AdvertiserDashboard = () => (
 export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="font-headline text-3xl font-bold">Dashboard</h1>
-        <Button asChild>
+        <Button asChild className="w-full sm:w-auto">
           <Link href="/marketplace">Explore Marketplace</Link>
         </Button>
       </div>
 
-       <Tabs defaultValue="affiliate">
+       <Tabs defaultValue="affiliate" className="w-full">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="affiliate">Affiliate View</TabsTrigger>
           <TabsTrigger value="advertiser">Advertiser View</TabsTrigger>
@@ -341,3 +341,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    

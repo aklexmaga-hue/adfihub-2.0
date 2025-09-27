@@ -63,7 +63,7 @@ const EstimatorResults = ({
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
           <div className="rounded-lg border p-4">
             <p className="text-sm text-muted-foreground">Projected CPA</p>
             <p className="text-2xl font-bold">
@@ -107,7 +107,9 @@ const EstimatorResults = ({
         <Separator />
         <div>
           <h3 className="font-semibold mb-2">Sensitivity Table</h3>
-          <p className="whitespace-pre-wrap font-code text-xs p-4 bg-muted rounded-md text-muted-foreground">{data.sensitivityTable}</p>
+          <div className="overflow-x-auto">
+            <p className="whitespace-pre-wrap font-code text-xs p-4 bg-muted rounded-md text-muted-foreground">{data.sensitivityTable}</p>
+          </div>
         </div>
       </CardContent>
     </Card>
@@ -309,3 +311,5 @@ export function EstimatorForm() {
     </>
   );
 }
+
+    

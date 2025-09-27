@@ -13,6 +13,13 @@ import { Logo } from '@/components/logo';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ExternalLink, Rss } from 'lucide-react';
 import { PARTNERS } from '@/lib/constants';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from '@/components/ui/sheet';
+import { Menu } from 'lucide-react';
 
 const featuredPartners = PARTNERS.filter(p => p.integrationStatus === 'Live');
 
@@ -56,13 +63,46 @@ export default function LandingPage() {
               </Link>
             ))}
           </nav>
-          <div className="flex flex-1 items-center justify-end space-x-4">
-            <Button asChild variant="ghost">
-              <Link href="/login">Log In</Link>
-            </Button>
-            <Button asChild className="bg-primary hover:bg-primary/90">
-              <Link href="/whitelist">Join Whitelist</Link>
-            </Button>
+          <div className="flex flex-1 items-center justify-end space-x-2 md:space-x-4">
+            <div className="hidden sm:flex items-center gap-2">
+              <Button asChild variant="ghost">
+                <Link href="/login">Log In</Link>
+              </Button>
+              <Button asChild className="bg-primary hover:bg-primary/90">
+                <Link href="/whitelist">Join Whitelist</Link>
+              </Button>
+            </div>
+             <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                 <nav className="flex flex-col gap-4 mt-8">
+                  {navLinks.map((link) => (
+                    <SheetClose asChild key={link.label}>
+                      <Link href={link.href} className="text-lg font-medium">
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </nav>
+                <div className="mt-8 flex flex-col gap-2">
+                   <SheetClose asChild>
+                    <Button asChild variant="outline">
+                      <Link href="/login">Log In</Link>
+                    </Button>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Button asChild>
+                      <Link href="/whitelist">Join Whitelist</Link>
+                    </Button>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
@@ -200,3 +240,5 @@ export default function LandingPage() {
     </div>
   );
 }
+
+    
