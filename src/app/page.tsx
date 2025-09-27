@@ -10,7 +10,6 @@ import {
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 import { Logo } from '@/components/logo';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ExternalLink, Rss } from 'lucide-react';
 import { PARTNERS } from '@/lib/constants';
 import {
@@ -43,12 +42,12 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen w-full flex-col bg-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Logo className="h-6 w-6" />
-            <span className="font-bold font-headline sm:inline-block">
+            <span className="hidden font-headline font-bold sm:inline-block">
               AdFiHub
             </span>
           </Link>
@@ -79,7 +78,7 @@ export default function LandingPage() {
                   <span className="sr-only">Toggle Menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="right" className="w-[300px]">
                  <nav className="flex flex-col gap-4 mt-8">
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.label}>
@@ -108,45 +107,45 @@ export default function LandingPage() {
       </header>
 
       <main className="flex-1">
-        <section className="container py-20 md:py-32">
-          <div className="grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
-            <div className="flex flex-col items-center md:items-start space-y-6">
-              <Badge
-                variant="outline"
-                className="w-fit border-accent/50 bg-accent/10 text-accent-foreground"
-              >
-                Connecting Media Buying with Web3
-              </Badge>
-              <h1 className="font-headline text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                The Future of Performance Marketing is Here
-              </h1>
-              <p className="max-w-[600px] text-lg text-muted-foreground">
-                AdFiHub is the ultimate marketplace for affiliates, advertisers,
-                and agencies. Discover transparent listings, secure payments,
-                and powerful AI tools, all on a Web3-friendly platform.
-              </p>
-              <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                <Button asChild size="lg">
-                  <Link href="/whitelist">Join the Whitelist</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/dashboard">Explore Dashboard</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative flex items-center justify-center">
-              <div className="absolute inset-0 -m-4 rounded-full bg-primary/10 blur-3xl"></div>
-              <Image
-                src="https://picsum.photos/seed/adtech/600/600"
-                alt="AdTech illustration"
-                width={600}
-                height={600}
-                className="relative z-10 rounded-full object-cover shadow-2xl"
-                data-ai-hint="abstract adtech"
-              />
+        <section className="container grid items-center gap-8 py-20 md:grid-cols-2 md:py-32">
+          <div className="flex flex-col items-center gap-6 text-center md:items-start md:text-left">
+            <Badge
+              variant="outline"
+              className="border-accent/50 bg-accent/10 text-accent-foreground"
+            >
+              Connecting Media Buying with Web3
+            </Badge>
+            <h1 className="font-headline text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl">
+              The Future of Performance Marketing is Here
+            </h1>
+            <p className="max-w-[600px] text-lg text-muted-foreground">
+              AdFiHub is the ultimate marketplace for affiliates, advertisers,
+              and agencies. Discover transparent listings, secure payments,
+              and powerful AI tools, all on a Web3-friendly platform.
+            </p>
+            <div className="flex w-full flex-col gap-4 sm:max-w-md sm:flex-row">
+              <Button asChild size="lg" className="w-full sm:w-auto">
+                <Link href="/whitelist">Join the Whitelist</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+                <Link href="/dashboard">Explore Dashboard</Link>
+              </Button>
             </div>
           </div>
+          <div className="relative mx-auto w-full max-w-sm md:max-w-none">
+             <div className="absolute inset-0 -m-4 rounded-full bg-primary/10 blur-3xl"></div>
+            <Image
+              src="https://picsum.photos/seed/adtech/600/600"
+              alt="AdTech illustration"
+              width={600}
+              height={600}
+              className="relative z-10 aspect-square w-full rounded-full object-cover shadow-2xl"
+              data-ai-hint="abstract adtech"
+              priority
+            />
+          </div>
         </section>
+
 
         <section className="bg-card py-16">
           <div className="container">
@@ -183,8 +182,8 @@ export default function LandingPage() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
-                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+                <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+                <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
               </Carousel>
             </div>
           </div>
