@@ -302,6 +302,11 @@ const SidebarInset = React.forwardRef<
       ref={ref}
       className={cn(
         "flex min-h-svh flex-1 flex-col bg-background",
+        "md:transition-[margin-left] md:ease-in-out md:duration-200",
+        "group-data-[variant=sidebar]/sidebar-wrapper:group-data-[side=left]/sidebar-wrapper:group-data-[state=expanded]/sidebar-wrapper:md:ml-[var(--sidebar-width)]",
+        "group-data-[variant=sidebar]/sidebar-wrapper:group-data-[side=left]/sidebar-wrapper:group-data-[state=collapsed]/sidebar-wrapper:md:ml-[var(--sidebar-width-icon)]",
+        "group-data-[variant=sidebar]/sidebar-wrapper:group-data-[side=right]/sidebar-wrapper:group-data-[state=expanded]/sidebar-wrapper:md:mr-[var(--sidebar-width)]",
+        "group-data-[variant=sidebar]/sidebar-wrapper:group-data-[side=right]/sidebar-wrapper:group-data-[state=collapsed]/sidebar-wrapper:md:mr-[var(--sidebar-width-icon)]",
         className
       )}
       {...props}
@@ -548,10 +553,8 @@ const SidebarMenuButton = React.forwardRef<
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
       >
-        <>
-          {icon}
-          {label && <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">{label}</span>}
-        </>
+        {icon}
+        {label && <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">{label}</span>}
       </Comp>
     )
 
