@@ -34,7 +34,7 @@ export default function AdminPage() {
         </div>
       </header>
       <Tabs defaultValue="users">
-        <TabsList>
+        <TabsList className="grid grid-cols-2 h-auto sm:grid-cols-4">
           <TabsTrigger value="users">User Moderation</TabsTrigger>
           <TabsTrigger value="listings">Listing Approvals</TabsTrigger>
           <TabsTrigger value="whitelist">Whitelist</TabsTrigger>

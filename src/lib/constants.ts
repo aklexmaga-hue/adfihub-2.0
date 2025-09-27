@@ -50,12 +50,21 @@ export type Partner = {
 export const PARTNERS: Partner[] = [
   {
     id: 'p1',
-    name: 'Roll & Win Casino',
+    name: 'Stake.com',
     category: 'Crypto Casinos',
     description:
-      'Leading crypto casino with provably fair games and high conversion rates.',
-    url: '#',
-    logoId: 'partner-casino-1',
+      'Leading crypto casino and sports betting platform with a huge global presence.',
+    url: 'https://stake.com',
+    logoId: 'partner-stake',
+    integrationStatus: 'Live',
+  },
+  {
+    id: 'p6',
+    name: '1win',
+    category: 'Crypto Casinos',
+    description: 'Popular online betting and casino platform with a wide range of games.',
+    url: 'https://1win.com',
+    logoId: 'partner-1win',
     integrationStatus: 'Live',
   },
   {
@@ -94,15 +103,6 @@ export const PARTNERS: Partner[] = [
       'Seamless fiat-to-crypto on-ramping with built-in KYC solutions.',
     url: '#',
     logoId: 'partner-onramp-1',
-    integrationStatus: 'Live',
-  },
-  {
-    id: 'p6',
-    name: 'Satoshi Slots',
-    category: 'Crypto Casinos',
-    description: 'Innovative slot games and affiliate programs with high payouts.',
-    url: '#',
-    logoId: 'partner-casino-2',
     integrationStatus: 'Live',
   },
 ];

@@ -13,16 +13,16 @@
       "imageHint": "company logo"
     },
     {
-      "id": "partner-casino-1",
-      "description": "Crypto Casino Partner 1",
-      "imageUrl": "https://images.unsplash.com/photo-1661348027228-e7f05cd5a254?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxsb2dvJTIwZ2FtaW5nfGVufDB8fHx8MTc1ODg4NzMwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo gaming"
+      "id": "partner-stake",
+      "description": "Stake.com Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1639846328328-af3209865147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsb2dvJTIwc3Rha2V8ZW58MHx8fHwxNzU5NjE4MjEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo stake"
     },
     {
-      "id": "partner-casino-2",
-      "description": "Crypto Casino Partner 2",
-      "imageUrl": "https://images.unsplash.com/photo-1569605803663-e9337d901ff9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsb2dvJTIwdGVjaHxlbnwwfHx8fDE3NTg5NjE5MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo tech"
+      "id": "partner-1win",
+      "description": "1win Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1620288627223-162b4274c3d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsb2dvJTIwMXdpbnxlbnwwfHx8fDE3NTk2MTgyMTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo 1win"
     },
     {
       "id": "partner-ad-agency-1",
