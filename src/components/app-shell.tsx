@@ -120,7 +120,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </a>
             </p>
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1 text-muted-foreground/80">
+               <div className="flex items-center gap-1 text-muted-foreground/80">
                 <span>Twitter</span>
                 <Badge variant="secondary" className="text-xs">
                   In Development
