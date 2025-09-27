@@ -24,6 +24,55 @@ import {
 } from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
 
+const transactions = [
+  {
+    campaign: 'Satoshi Slots Campaign',
+    offerId: '12345',
+    type: 'Payout',
+    status: 'Approved',
+    date: '2023-06-23',
+    amount: 250.0,
+    statusVariant: 'outline',
+  },
+  {
+    campaign: 'AdPro Agency Deposit',
+    offerId: '67890',
+    type: 'Deposit',
+    status: 'Completed',
+    date: '2023-06-24',
+    amount: 1500.0,
+    statusVariant: 'outline',
+  },
+  {
+    campaign: 'High-Roller Casino',
+    offerId: '78901',
+    type: 'Payout',
+    status: 'Approved',
+    date: '2023-06-25',
+    amount: 750.5,
+    statusVariant: 'outline',
+  },
+  {
+    campaign: 'CryptoRamp Payout',
+    offerId: '23456',
+    type: 'Withdrawal',
+    status: 'Processing',
+    date: '2023-06-26',
+    amount: -1000.0,
+    statusVariant: 'secondary',
+  },
+  {
+    campaign: 'E-com Brand Promo',
+    offerId: '34567',
+    type: 'Payout',
+    status: 'Declined',
+    date: '2023-06-27',
+    amount: 120.0,
+    statusVariant: 'destructive',
+  },
+];
+
+
 export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-6">
@@ -110,42 +159,29 @@ export default function DashboardPage() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              <TableRow>
-                <TableCell>
-                  <div className="font-medium">Satoshi Slots Campaign</div>
-                  <div className="hidden text-sm text-muted-foreground md:inline">
-                    Offer ID: 12345
-                  </div>
-                </TableCell>
-                <TableCell className="hidden sm:table-cell">Payout</TableCell>
-                <TableCell className="hidden sm:table-cell">
-                  <Badge className="text-xs" variant="outline">
-                    Approved
-                  </Badge>
-                </TableCell>
-                <TableCell className="hidden md:table-cell">
-                  2023-06-23
-                </TableCell>
-                <TableCell className="text-right">$250.00</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>
-                  <div className="font-medium">AdPro Agency Deposit</div>
-                  <div className="hidden text-sm text-muted-foreground md:inline">
-                    Ref: 67890
-                  </div>
-                </TableCell>
-                <TableCell className="hidden sm:table-cell">Deposit</TableCell>
-                <TableCell className="hidden sm:table-cell">
-                  <Badge className="text-xs" variant="secondary">
-                    Pending
-                  </Badge>
-                </TableCell>
-                <TableCell className="hidden md:table-cell">
-                  2023-06-24
-                </TableCell>
-                <TableCell className="text-right">$1,500.00</TableCell>
-              </TableRow>
+               {transactions.map((transaction) => (
+                <TableRow key={transaction.offerId}>
+                  <TableCell>
+                    <div className="font-medium">{transaction.campaign}</div>
+                    <div className="hidden text-sm text-muted-foreground md:inline">
+                      Offer ID: {transaction.offerId}
+                    </div>
+                  </TableCell>
+                  <TableCell className="hidden sm:table-cell">{transaction.type}</TableCell>
+                  <TableCell className="hidden sm:table-cell">
+                    <Badge
+                      className="text-xs"
+                      variant={transaction.statusVariant as any}
+                    >
+                      {transaction.status}
+                    </Badge>
+                  </TableCell>
+                  <TableCell className="hidden md:table-cell">{transaction.date}</TableCell>
+                  <TableCell className={`text-right ${transaction.amount < 0 ? 'text-destructive' : ''}`}>
+                    {transaction.amount < 0 ? '-' : ''}${Math.abs(transaction.amount).toFixed(2)}
+                  </TableCell>
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </CardContent>
