@@ -7,9 +7,10 @@ import { Logo } from '@/components/logo';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ExternalLink, Rss } from 'lucide-react';
 
-const trustBadges = PlaceHolderImages.filter(p =>
-  ['target-mafia', 'consensus-capital'].includes(p.id)
-);
+const trustBadges = [
+  { id: 'target-mafia', name: 'Target Mafia' },
+  { id: 'consensus-capital', name: 'Consensus Capital' },
+];
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
@@ -102,20 +103,13 @@ export default function LandingPage() {
                 traffic arbitration.
               </p>
             </div>
-            <div className="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-2">
+            <div className="mt-10 grid grid-cols-2 gap-8">
               {trustBadges.map(badge => (
                 <div
                   key={badge.id}
-                  className="flex items-center justify-center grayscale transition-all hover:grayscale-0"
+                  className="flex items-center justify-center"
                 >
-                  <Image
-                    src={badge.imageUrl}
-                    alt={badge.description}
-                    width={180}
-                    height={60}
-                    className="object-contain"
-                    data-ai-hint={badge.imageHint}
-                  />
+                  <p className="text-xl font-semibold text-muted-foreground">{badge.name}</p>
                 </div>
               ))}
             </div>
