@@ -536,7 +536,8 @@ const SidebarMenuButton = React.forwardRef<
     const { isMobile, state } = useSidebar()
     
     const childs = React.Children.toArray(children)
-    const [icon, label] = childs as [React.ReactElement, React.ReactElement];
+    const icon = childs[0];
+    const label = childs.length > 1 ? childs.slice(1) : null;
 
     const button = (
        <Comp
@@ -547,8 +548,10 @@ const SidebarMenuButton = React.forwardRef<
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
       >
-        {icon}
-        {label && <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">{label}</span>}
+        <>
+          {icon}
+          {label && <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">{label}</span>}
+        </>
       </Comp>
     )
 
