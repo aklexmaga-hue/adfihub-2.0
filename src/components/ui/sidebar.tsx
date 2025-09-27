@@ -534,6 +534,9 @@ const SidebarMenuButton = React.forwardRef<
   ) => {
     const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
+    
+    const childs = React.Children.toArray(props.children)
+    const [icon, label] = childs as [React.ReactElement, React.ReactElement];
 
     const button = (
       <Comp
@@ -545,7 +548,7 @@ const SidebarMenuButton = React.forwardRef<
         {...props}
       >
         {children}
-        <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">{props.children[1]}</span>
+        {label && <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">{label}</span>}
       </Comp>
     )
 
