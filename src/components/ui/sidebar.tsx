@@ -553,8 +553,12 @@ const SidebarMenuButton = React.forwardRef<
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
       >
-        {icon}
-        {label && <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">{label}</span>}
+        <>
+          {icon}
+          <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">
+            {label}
+          </span>
+        </>
       </Comp>
     )
 
