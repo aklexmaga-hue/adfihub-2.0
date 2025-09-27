@@ -63,15 +63,15 @@ export default function LandingPage() {
               </Link>
             ))}
           </nav>
-          <div className="flex flex-1 items-center justify-end space-x-2 md:space-x-4">
-            <div className="hidden sm:flex items-center gap-2">
-              <Button asChild variant="ghost">
-                <Link href="/login">Log In</Link>
-              </Button>
-              <Button asChild className="bg-primary hover:bg-primary/90">
-                <Link href="/whitelist">Join Whitelist</Link>
-              </Button>
-            </div>
+          <div className="flex flex-1 items-center justify-end space-x-2">
+             <div className="hidden sm:flex items-center gap-2">
+                <Button asChild variant="ghost">
+                  <Link href="/login">Log In</Link>
+                </Button>
+                <Button asChild>
+                  <Link href="/whitelist">Join Whitelist</Link>
+                </Button>
+              </div>
              <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
@@ -109,8 +109,8 @@ export default function LandingPage() {
 
       <main className="flex-1">
         <section className="container py-20 md:py-32">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div className="flex flex-col justify-center space-y-6">
+          <div className="grid grid-cols-1 items-center gap-12 text-center md:grid-cols-2 md:text-left">
+            <div className="flex flex-col items-center md:items-start space-y-6">
               <Badge
                 variant="outline"
                 className="w-fit border-accent/50 bg-accent/10 text-accent-foreground"
@@ -126,7 +126,7 @@ export default function LandingPage() {
                 and powerful AI tools, all on a Web3-friendly platform.
               </p>
               <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                <Button asChild size="lg">
                   <Link href="/whitelist">Join the Whitelist</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
@@ -240,5 +240,3 @@ export default function LandingPage() {
     </div>
   );
 }
-
-    

@@ -60,6 +60,7 @@ const prompt = ai.definePrompt({
   name: 'generateCampaignBundlePrompt',
   input: {schema: GenerateCampaignBundleInputSchema},
   output: {schema: GenerateCampaignBundleOutputSchema},
+  model: 'googleai/gemini-2.5-flash',
   prompt: `You are an expert advertising campaign creator.
 
 Your task is to generate a complete advertising campaign bundle based on the user's input.
@@ -82,7 +83,7 @@ Instructions:
 7.  Suggest 'campaignSettings' including bids, budgets, and dayparting.
 8.  Outline a clear 'abTestPlan' with KPI targets.
 9.  Ensure all output fields are populated with high-quality, relevant content.
-`, 
+`,
 });
 
 const generateCampaignBundleFlow = ai.defineFlow(
