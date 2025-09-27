@@ -216,7 +216,7 @@ const Sidebar = React.forwardRef<
     return (
       <aside
         ref={ref}
-        className={cn("hidden md:flex flex-col transition-all duration-200 ease-in-out", 
+        className={cn("hidden md:flex flex-col transition-all duration-200 ease-in-out h-full", 
         state === 'expanded' ? 'w-[var(--sidebar-width)]' : 'w-[var(--sidebar-width-icon)]',
         variant === 'sidebar' && 'border-r',
         variant === 'inset' && 'm-2 rounded-lg border shadow-sm',
@@ -539,17 +539,20 @@ const SidebarMenuButton = React.forwardRef<
     const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
     
-    const icon = React.Children.toArray(children)[0];
-    const label = React.Children.toArray(children)[1];
+    const icon = React.Children.map(children, child => {
+        if(React.isValidElement(child) && typeof child.type !== 'string' && child.type.name !== 'span') {
+            return child;
+        }
+        return null;
+    })?.[0] || null;
 
-    const buttonContent = (
-      <>
-        {icon}
-        <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">
-          {label}
-        </span>
-      </>
-    );
+    const label = React.Children.map(children, child => {
+        if(React.isValidElement(child) && typeof child.type !== 'string' && child.type.name === 'span') {
+            return child;
+        }
+        return null;
+    })?.[0] || null;
+
 
     const button = (
        <Comp
@@ -560,7 +563,10 @@ const SidebarMenuButton = React.forwardRef<
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
       >
-        {buttonContent}
+        {icon}
+        <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">
+            {label ? (label as React.ReactElement).props.children : null}
+        </span>
       </Comp>
     )
 
