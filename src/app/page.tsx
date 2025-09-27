@@ -1,22 +1,20 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 import { Logo } from '@/components/logo';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ExternalLink, Rss } from 'lucide-react';
 import { PARTNERS } from '@/lib/constants';
 
-const featuredPartners = PARTNERS.filter(p =>
-  ['Crypto Casinos', 'Ad Agencies', 'Traffic Networks'].includes(p.category)
-).map(p => p.name);
-
-const trustBadges = [
-  'Target Mafia',
-  'Consensus Capital',
-  ...featuredPartners,
-];
+const featuredPartners = PARTNERS.filter(p => p.integrationStatus === 'Live');
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
@@ -109,16 +107,58 @@ export default function LandingPage() {
                 traffic arbitration.
               </p>
             </div>
-             <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-              {trustBadges.map(name => (
-                <div
-                  key={name}
-                  className="flex items-center justify-center"
-                >
-                  <p className="text-lg font-semibold text-muted-foreground text-center">{name}</p>
-                </div>
-              ))}
-            </div>
+            <Carousel
+              opts={{
+                align: 'start',
+                loop: true,
+              }}
+              className="mt-10 w-full"
+            >
+              <CarouselContent>
+                {[
+                  {
+                    id: 'target-mafia',
+                    name: 'Target Mafia',
+                  },
+                  {
+                    id: 'consensus-capital',
+                    name: 'Consensus Capital',
+                  },
+                  ...featuredPartners.map(p => ({ id: p.logoId, name: p.name })),
+                ].map(partner => {
+                  const logo = PlaceHolderImages.find(p => p.id === partner.id);
+                  return (
+                    <CarouselItem
+                      key={partner.id}
+                      className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
+                    >
+                      <div className="p-4">
+                        {logo ? (
+                          <div className="flex h-20 items-center justify-center grayscale transition-all hover:grayscale-0">
+                            <Image
+                              src={logo.imageUrl}
+                              alt={partner.name}
+                              width={140}
+                              height={40}
+                              className="object-contain"
+                              data-ai-hint={logo.imageHint}
+                            />
+                          </div>
+                        ) : (
+                          <div className="flex h-20 items-center justify-center">
+                            <p className="text-center font-semibold text-muted-foreground">
+                              {partner.name}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex" />
+              <CarouselNext className="hidden sm:flex" />
+            </Carousel>
           </div>
         </section>
       </main>
