@@ -6,10 +6,16 @@ import { Badge } from '@/components/ui/badge';
 import { Logo } from '@/components/logo';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ExternalLink, Rss } from 'lucide-react';
+import { PARTNERS } from '@/lib/constants';
+
+const featuredPartners = PARTNERS.filter(p =>
+  ['Crypto Casinos', 'Ad Agencies', 'Traffic Networks'].includes(p.category)
+).map(p => p.name);
 
 const trustBadges = [
-  { id: 'target-mafia', name: 'Target Mafia' },
-  { id: 'consensus-capital', name: 'Consensus Capital' },
+  'Target Mafia',
+  'Consensus Capital',
+  ...featuredPartners,
 ];
 
 const navLinks = [
@@ -103,13 +109,13 @@ export default function LandingPage() {
                 traffic arbitration.
               </p>
             </div>
-            <div className="mt-10 grid grid-cols-2 gap-8">
-              {trustBadges.map(badge => (
+             <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+              {trustBadges.map(name => (
                 <div
-                  key={badge.id}
+                  key={name}
                   className="flex items-center justify-center"
                 >
-                  <p className="text-xl font-semibold text-muted-foreground">{badge.name}</p>
+                  <p className="text-lg font-semibold text-muted-foreground text-center">{name}</p>
                 </div>
               ))}
             </div>
@@ -135,11 +141,11 @@ export default function LandingPage() {
                 . Since 2025.
                 </p>
             </div>
-            <p className='text-xs text-muted-foreground max-w-md'>
+             <p className='text-xs text-muted-foreground max-w-md'>
                 This is a demo version of the site. All content, including images and text, is for demonstration purposes and will be replaced.
             </p>
           </div>
-          <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground md:items-end">
+           <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground md:items-end">
             <a
                 href="mailto:main@adfihub.xyz"
                 className="font-medium underline-offset-4 hover:text-primary hover:underline"

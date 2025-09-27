@@ -67,6 +67,15 @@ export const PARTNERS: Partner[] = [
     logoId: 'partner-1win',
     integrationStatus: 'Live',
   },
+    {
+    id: 'p7',
+    name: 'BC.Game',
+    category: 'Crypto Casinos',
+    description: 'Community-based crypto casino with a wide variety of original games.',
+    url: 'https://bc.game',
+    logoId: 'partner-bcgame',
+    integrationStatus: 'Live',
+  },
   {
     id: 'p2',
     name: 'AdPro Agency',
