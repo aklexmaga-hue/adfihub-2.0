@@ -541,11 +541,11 @@ const SidebarMenuButton = React.forwardRef<
     const { isMobile, state } = useSidebar()
     
     const childs = React.Children.toArray(children)
-    const icon = childs[0];
-    const label = childs.length > 1 ? childs.slice(1) : null;
+    const icon = childs.find(child => React.isValidElement(child) && child.type !== 'span')
+    const label = childs.find(child => React.isValidElement(child) && child.type === 'span')
 
     const button = (
-       <Comp
+      <Comp
         ref={ref}
         data-sidebar="menu-button"
         data-size={size}
@@ -556,7 +556,7 @@ const SidebarMenuButton = React.forwardRef<
         <>
           {icon}
           <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">
-            {label}
+            {label ? (label as React.ReactElement).props.children : null}
           </span>
         </>
       </Comp>
