@@ -124,24 +124,36 @@ export default function LandingPage() {
       </main>
 
       <footer className="border-t bg-background">
-        <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
-          <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
-            <Logo className="h-6 w-6" />
-            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              Built by{' '}
-              <a
-                href="#"
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium underline underline-offset-4"
-              >
-                Target Mafia
-              </a>
-              . Since 2025.
+        <div className="container flex flex-col items-center justify-between gap-6 py-10 md:h-auto md:flex-row md:py-6">
+          <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+            <div className="flex items-center gap-2">
+                <Logo className="h-6 w-6" />
+                <p className="text-sm leading-loose text-muted-foreground">
+                Built by{' '}
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-medium underline underline-offset-4"
+                >
+                    Target Mafia
+                </a>
+                . Since 2025.
+                </p>
+            </div>
+            <p className='text-xs text-muted-foreground max-w-md'>
+                This is a demo version of the site. All content, including images and text, is for demonstration purposes and will be replaced.
             </p>
           </div>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground md:items-end">
             <a
+                href="mailto:main@adfihub.xyz"
+                className="font-medium underline-offset-4 hover:text-primary hover:underline"
+              >
+                main@adfihub.xyz
+            </a>
+            <div className="flex items-center gap-4">
+                 <a
                 href="https://find-and-update.company-information.service.gov.uk/company/16701096"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -149,9 +161,10 @@ export default function LandingPage() {
               >
                 ADFIHUB LIMITED
               </a>
-            <div className="flex items-center gap-2">
-              <Rss className="h-4 w-4" />
-              <span className="text-muted-foreground/80">In Development</span>
+                <div className="flex items-center gap-2">
+                <Rss className="h-4 w-4" />
+                <span className="text-muted-foreground/80">In Development</span>
+                </div>
             </div>
           </div>
         </div>
