@@ -16,13 +16,12 @@ export async function runEstimateCampaignPerformance(
   input: EstimateCampaignPerformanceInput
 ): Promise<EstimateCampaignPerformanceOutput | { error: string }> {
   try {
-    console.log('Running estimateCampaignPerformance with input:', input);
     const result = await estimateCampaignPerformance(input);
-    console.log('Got result from estimateCampaignPerformance:', result);
     return result;
-  } catch (error) {
-    console.error('Error in estimateCampaignPerformance flow:', error);
-    return { error: 'Failed to estimate campaign performance.' };
+  } catch (e: any) {
+    console.error('Error in estimateCampaignPerformance flow:', e);
+    const message = e.message || 'An unexpected error occurred.';
+    return { error: `Failed to estimate campaign performance: ${message}` };
   }
 }
 
@@ -30,12 +29,11 @@ export async function runGenerateCampaignBundle(
   input: GenerateCampaignBundleInput
 ): Promise<GenerateCampaignBundleOutput | { error: string }> {
   try {
-    console.log('Running generateCampaignBundle with input:', input);
     const result = await generateCampaignBundle(input);
-    console.log('Got result from generateCampaignBundle:', result);
     return result;
-  } catch (error) {
-    console.error('Error in generateCampaignBundle flow:', error);
-    return { error: 'Failed to generate campaign bundle.' };
+  } catch (e: any) {
+    console.error('Error in generateCampaignBundle flow:', e);
+    const message = e.message || 'An unexpected error occurred.';
+    return { error: `Failed to generate campaign bundle: ${message}` };
   }
 }
