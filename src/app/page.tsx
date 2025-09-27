@@ -23,6 +23,18 @@ const navLinks = [
 ];
 
 export default function LandingPage() {
+  const allPartners = [
+    {
+      id: 'target-mafia',
+      name: 'Target Mafia',
+    },
+    {
+      id: 'consensus-capital',
+      name: 'Consensus Capital',
+    },
+    ...featuredPartners.map(p => ({ id: p.id, name: p.name })),
+  ];
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -115,46 +127,20 @@ export default function LandingPage() {
               className="mt-10 w-full"
             >
               <CarouselContent>
-                {[
-                  {
-                    id: 'target-mafia',
-                    name: 'Target Mafia',
-                  },
-                  {
-                    id: 'consensus-capital',
-                    name: 'Consensus Capital',
-                  },
-                  ...featuredPartners.map(p => ({ id: p.logoId, name: p.name })),
-                ].map(partner => {
-                  const logo = PlaceHolderImages.find(p => p.id === partner.id);
-                  return (
-                    <CarouselItem
-                      key={partner.id}
-                      className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
-                    >
-                      <div className="p-4">
-                        {logo ? (
-                          <div className="flex h-20 items-center justify-center grayscale transition-all hover:grayscale-0">
-                            <Image
-                              src={logo.imageUrl}
-                              alt={partner.name}
-                              width={140}
-                              height={40}
-                              className="object-contain"
-                              data-ai-hint={logo.imageHint}
-                            />
-                          </div>
-                        ) : (
-                          <div className="flex h-20 items-center justify-center">
-                            <p className="text-center font-semibold text-muted-foreground">
-                              {partner.name}
-                            </p>
-                          </div>
-                        )}
+                {allPartners.map(partner => (
+                  <CarouselItem
+                    key={partner.id}
+                    className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
+                  >
+                    <div className="p-4">
+                      <div className="flex h-20 items-center justify-center">
+                        <p className="text-center font-semibold text-muted-foreground transition-colors hover:text-foreground">
+                          {partner.name}
+                        </p>
                       </div>
-                    </CarouselItem>
-                  );
-                })}
+                    </div>
+                  </CarouselItem>
+                ))}
               </CarouselContent>
               <CarouselPrevious className="hidden sm:flex" />
               <CarouselNext className="hidden sm:flex" />
