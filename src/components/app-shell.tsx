@@ -36,7 +36,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full">
+      <div className="relative flex h-screen w-full">
         <Sidebar>
           <SidebarHeader>
             <Link href="/" className="flex items-center gap-2">
@@ -71,7 +71,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <p>Since 2025</p>
           </SidebarFooter>
         </Sidebar>
-        <div className="flex flex-1 flex-col">
+        <SidebarInset>
           <header className="sticky top-0 z-40 flex h-14 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
             <SidebarTrigger className="md:hidden" />
             <div className="flex-1">
@@ -144,7 +144,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </div>
             </div>
           </footer>
-        </div>
+        </SidebarInset>
       </div>
     </SidebarProvider>
   );

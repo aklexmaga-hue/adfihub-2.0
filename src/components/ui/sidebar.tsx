@@ -181,7 +181,7 @@ const Sidebar = React.forwardRef<
       return (
         <div
           className={cn(
-            "flex h-full flex-col bg-sidebar text-sidebar-foreground",
+            "fixed h-full flex-col bg-sidebar text-sidebar-foreground",
             className
           )}
           style={{ width: 'var(--sidebar-width)'}}
@@ -216,7 +216,7 @@ const Sidebar = React.forwardRef<
     return (
       <aside
         ref={ref}
-        className={cn("hidden md:flex flex-col transition-all duration-200 ease-in-out h-full", 
+        className={cn("hidden md:flex flex-col transition-all duration-200 ease-in-out fixed h-full z-50", 
         state === 'expanded' ? 'w-[var(--sidebar-width)]' : 'w-[var(--sidebar-width-icon)]',
         variant === 'sidebar' && 'border-r',
         variant === 'inset' && 'm-2 rounded-lg border shadow-sm',
@@ -538,22 +538,22 @@ const SidebarMenuButton = React.forwardRef<
   ) => {
     const Comp = asChild ? Slot : "button"
     const { isMobile, state } = useSidebar()
+
+    const buttonContent = (
+      <>
+        {React.Children.map(children, (child) => {
+          if (React.isValidElement(child) && child.type === 'span') {
+            return (
+              <span className={cn('truncate', state === 'collapsed' ? 'hidden' : '')}>
+                {child.props.children}
+              </span>
+            );
+          }
+          return child;
+        })}
+      </>
+    );
     
-    const icon = React.Children.map(children, child => {
-        if(React.isValidElement(child) && typeof child.type !== 'string' && child.type.name !== 'span') {
-            return child;
-        }
-        return null;
-    })?.[0] || null;
-
-    const label = React.Children.map(children, child => {
-        if(React.isValidElement(child) && typeof child.type !== 'string' && child.type.name === 'span') {
-            return child;
-        }
-        return null;
-    })?.[0] || null;
-
-
     const button = (
        <Comp
         ref={ref}
@@ -563,12 +563,25 @@ const SidebarMenuButton = React.forwardRef<
         className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
         {...props}
       >
-        <>{icon}
-        <span className="group-[[data-state=collapsed]]/sidebar-wrapper:hidden">
-            {label ? (label as React.ReactElement).props.children : null}
-        </span></>
+        {children}
       </Comp>
     )
+
+    if (asChild) {
+      return (
+        <Slot
+          ref={ref}
+          data-sidebar="menu-button"
+          data-size={size}
+          data-active={isActive}
+          className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+          {...props}
+        >
+          {children}
+        </Slot>
+      );
+    }
+    
 
     if (!tooltip) {
       return button
