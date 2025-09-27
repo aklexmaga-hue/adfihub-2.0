@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/carousel';
 import { Badge } from '@/components/ui/badge';
 import { Logo } from '@/components/logo';
-import { ExternalLink, Rss } from 'lucide-react';
+import { Rss } from 'lucide-react';
 import { PARTNERS } from '@/lib/constants';
 import {
   Sheet,
@@ -63,15 +63,15 @@ export default function LandingPage() {
             ))}
           </nav>
           <div className="flex flex-1 items-center justify-end space-x-2">
-             <div className="hidden sm:flex items-center gap-2">
-                <Button asChild variant="ghost">
-                  <Link href="/login">Log In</Link>
-                </Button>
-                <Button asChild>
-                  <Link href="/whitelist">Join Whitelist</Link>
-                </Button>
-              </div>
-             <Sheet>
+            <div className="hidden sm:flex items-center gap-2">
+              <Button asChild variant="ghost">
+                <Link href="/login">Log In</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/whitelist">Join Whitelist</Link>
+              </Button>
+            </div>
+            <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
                   <Menu className="h-5 w-5" />
@@ -79,8 +79,8 @@ export default function LandingPage() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px]">
-                 <nav className="flex flex-col gap-4 mt-8">
-                  {navLinks.map((link) => (
+                <nav className="flex flex-col gap-4 mt-8">
+                  {navLinks.map(link => (
                     <SheetClose asChild key={link.label}>
                       <Link href={link.href} className="text-lg font-medium">
                         {link.label}
@@ -89,7 +89,7 @@ export default function LandingPage() {
                   ))}
                 </nav>
                 <div className="mt-8 flex flex-col gap-2">
-                   <SheetClose asChild>
+                  <SheetClose asChild>
                     <Button asChild variant="outline">
                       <Link href="/login">Log In</Link>
                     </Button>
@@ -108,7 +108,7 @@ export default function LandingPage() {
 
       <main className="flex-1">
         <section className="container grid items-center gap-8 py-20 md:grid-cols-2 md:py-32">
-          <div className="flex flex-col items-center gap-6 text-center md:items-start md:text-left">
+          <div className="order-2 flex flex-col items-center gap-6 text-center md:order-1 md:items-start md:text-left">
             <Badge
               variant="outline"
               className="border-accent/50 bg-accent/10 text-accent-foreground"
@@ -127,25 +127,31 @@ export default function LandingPage() {
               <Button asChild size="lg" className="w-full sm:w-auto">
                 <Link href="/whitelist">Join the Whitelist</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+              >
                 <Link href="/dashboard">Explore Dashboard</Link>
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto w-full max-w-sm md:max-w-none">
-             <div className="absolute inset-0 -m-4 rounded-full bg-primary/10 blur-3xl"></div>
-            <Image
-              src="https://picsum.photos/seed/adtech/600/600"
-              alt="AdTech illustration"
-              width={600}
-              height={600}
-              className="relative z-10 aspect-square w-full rounded-full object-cover shadow-2xl"
-              data-ai-hint="abstract adtech"
-              priority
-            />
+          <div className="order-1 mx-auto w-full max-w-sm md:order-2 md:max-w-none">
+            <div className="relative">
+              <div className="absolute inset-0 -m-4 rounded-full bg-primary/10 blur-3xl"></div>
+              <Image
+                src="https://picsum.photos/seed/adtech/600/600"
+                alt="AdTech illustration"
+                width={600}
+                height={600}
+                className="relative z-10 aspect-square w-full rounded-full object-cover shadow-2xl"
+                data-ai-hint="abstract adtech"
+                priority
+              />
+            </div>
           </div>
         </section>
-
 
         <section className="bg-card py-16">
           <div className="container">
@@ -194,33 +200,34 @@ export default function LandingPage() {
         <div className="container flex flex-col items-center justify-between gap-6 py-10 md:h-auto md:flex-row md:py-6">
           <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
             <div className="flex items-center gap-2">
-                <Logo className="h-6 w-6" />
-                <p className="text-sm leading-loose text-muted-foreground">
+              <Logo className="h-6 w-6" />
+              <p className="text-sm leading-loose text-muted-foreground">
                 Built by{' '}
                 <a
-                    href="#"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="font-medium underline underline-offset-4"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium underline underline-offset-4"
                 >
-                    Target Mafia
+                  Target Mafia
                 </a>
                 . Since 2025.
-                </p>
+              </p>
             </div>
-             <p className='text-xs text-muted-foreground max-w-md'>
-                This is a demo version of the site. All content, including images and text, is for demonstration purposes and will be replaced.
+            <p className="text-xs text-muted-foreground max-w-md">
+              This is a demo version of the site. All content, including images
+              and text, is for demonstration purposes and will be replaced.
             </p>
           </div>
-           <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground md:items-end">
+          <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground md:items-end">
             <a
-                href="mailto:main@adfihub.xyz"
-                className="font-medium underline-offset-4 hover:text-primary hover:underline"
-              >
-                main@adfihub.xyz
+              href="mailto:main@adfihub.xyz"
+              className="font-medium underline-offset-4 hover:text-primary hover:underline"
+            >
+              main@adfihub.xyz
             </a>
             <div className="flex items-center gap-4">
-                 <a
+              <a
                 href="https://find-and-update.company-information.service.gov.uk/company/16701096"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -228,10 +235,10 @@ export default function LandingPage() {
               >
                 ADFIHUB LIMITED
               </a>
-                <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <Rss className="h-4 w-4" />
                 <span className="text-muted-foreground/80">In Development</span>
-                </div>
+              </div>
             </div>
           </div>
         </div>
