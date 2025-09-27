@@ -190,7 +190,7 @@ export default function MarketplacePage() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between">
-                <Button variant="outline" size="sm" className="gap-2">
+                <Button variant="outline" size="sm" className="gap-2" disabled>
                   <ShieldAlert className="h-4 w-4" />
                   Dispute
                 </Button>
