@@ -62,25 +62,26 @@ const prompt = ai.definePrompt({
   output: {schema: GenerateCampaignBundleOutputSchema},
   prompt: `You are an expert advertising campaign creator.
 
-You will generate a complete advertising campaign bundle based on the user's input.
+Your task is to generate a complete advertising campaign bundle based on the user's input.
 
-Vertical: {{{vertical}}}
-Offer ID: {{{offerId}}}
-Budget: {{{budget}}}
-Primary Geo: {{{primaryGeo}}}
-Traffic Source: {{{trafficSource}}}
-Desired KPI: {{{desiredKpi}}}
+Campaign Details:
+- Vertical: {{{vertical}}}
+- Offer ID: {{{offerId}}}
+- Budget: {{{budget}}} USD
+- Primary Geo: {{{primaryGeo}}}
+- Traffic Source: {{{trafficSource}}}
+- Desired KPI: {{{desiredKpi}}}
 
-Create a bundle.zip file containing:
-- 3 ad copy variants (headlines + descriptions)
-- 3 suggested creatives (text + image prompts or prebuilt templates)
-- landing page template (HTML) + recommended headline, CTA, basic tracking pixel snippet
-- tracker macros & example postback URL
-- suggested campaign settings (bids, budgets, dayparting)
-- A/B test plan and KPI targets.
-
-Return ad copy variants, creative suggestions, landing page template, tracking parameters, campaign settings, and A/B test plan.
-Return the bundle zip as a data URI.
+Instructions:
+1.  Create a comprehensive campaign bundle fulfilling all fields in the output schema.
+2.  The 'bundleZip' must be a data URI representing a ZIP file containing all generated assets. This is a critical requirement.
+3.  Provide at least three distinct 'adCopyVariants'.
+4.  Offer at least three 'creativeSuggestions', which can be text descriptions for image generation or concepts for pre-built templates.
+5.  Generate a complete 'landingPageTemplate' in HTML, including a headline, call-to-action (CTA), and a placeholder for a tracking pixel.
+6.  List relevant 'trackingParameters' (like tracker macros and an example postback URL).
+7.  Suggest 'campaignSettings' including bids, budgets, and dayparting.
+8.  Outline a clear 'abTestPlan' with KPI targets.
+9.  Ensure all output fields are populated with high-quality, relevant content.
 `, 
 });
 

@@ -79,19 +79,30 @@ const estimateCampaignPerformancePrompt = ai.definePrompt({
   output: {schema: EstimateCampaignPerformanceOutputSchema},
   prompt: `You are an expert marketing analyst specializing in predicting campaign performance.
 
-  Given the following campaign parameters, provide estimates for CPA, revenue, ROI, and other key metrics. If the expected conversion rate is not provided, estimate it based on the vertical, geo, and traffic source. Provide a plain-English recommendation based on the estimates.
+  Your task is to provide a detailed performance estimate based on the campaign parameters provided.
   
-  Offer Payout: {{{offerPayout}}}
-  Vertical: {{{vertical}}}
-  Geo: {{{geo}}}
-  Traffic Source: {{{trafficSource}}}
-  Monthly Budget: {{{monthlyBudget}}}
-  Expected Conversion Rate: {{#if expectedCR}}{{{expectedCR}}}{{else}}Estimate a conversion rate.{{/if}}
-  Tracking Type: {{{trackingType}}}
-  Conversion Funnel Steps: {{{conversionFunnelSteps}}}
+  Parameters:
+  - Offer Payout: {{{offerPayout}}}
+  - Vertical: {{{vertical}}}
+  - Geo: {{{geo}}}
+  - Traffic Source: {{{trafficSource}}}
+  - Monthly Budget: {{{monthlyBudget}}}
+  - Tracking Type: {{{trackingType}}}
+  - Conversion Funnel Steps: {{{conversionFunnelSteps}}}
   
-  Ensure that the conversion rate is represented as a decimal between 0 and 1 (e.g. 0.01 for 1%). Return the best estimates for projectedCPA, expectedConversionsPerMonth, expectedRevenue, roi, breakEvenCPC, breakEvenCPM, confidenceInterval, sensitivityTable and recommendation.
-  If you estimated the conversion rate, include it in the suggestedConversionRate field.`,
+  Conversion Rate:
+  {{#if expectedCR}}
+  - The user has provided an expected conversion rate of {{{expectedCR}}}. Use this value for your calculations.
+  {{else}}
+  - The user has NOT provided an expected conversion rate. You MUST estimate a realistic conversion rate based on the Vertical, Geo, and Traffic Source provided. Use this estimated conversion rate for all calculations.
+  {{/if}}
+  
+  Instructions:
+  1.  Calculate and return the best estimates for all fields in the output schema: projectedCPA, expectedConversionsPerMonth, expectedRevenue, roi, breakEvenCPC, breakEvenCPM, confidenceInterval, and sensitivityTable.
+  2.  Provide a concise, plain-English 'recommendation' based on your analysis.
+  3.  If you estimated the conversion rate, you MUST populate the 'suggestedConversionRate' field with your estimated value. Otherwise, leave it empty.
+  4.  Ensure any conversion rate value (provided or estimated) is treated as a decimal between 0 and 1 (e.g., 1% is 0.01).
+  `,
 });
 
 const estimateCampaignPerformanceFlow = ai.defineFlow(
