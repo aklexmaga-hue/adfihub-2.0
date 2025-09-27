@@ -119,32 +119,34 @@ export default function LandingPage() {
                 traffic arbitration.
               </p>
             </div>
-            <Carousel
-              opts={{
-                align: 'start',
-                loop: true,
-              }}
-              className="mt-10 w-full"
-            >
-              <CarouselContent>
-                {allPartners.map(partner => (
-                  <CarouselItem
-                    key={partner.id}
-                    className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
-                  >
-                    <div className="p-4">
-                      <div className="flex h-20 items-center justify-center">
-                        <p className="text-center font-semibold text-muted-foreground transition-colors hover:text-foreground">
-                          {partner.name}
-                        </p>
+            <div className="relative mt-10">
+              <Carousel
+                opts={{
+                  align: 'start',
+                  loop: true,
+                }}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {allPartners.map(partner => (
+                    <CarouselItem
+                      key={partner.id}
+                      className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5"
+                    >
+                      <div className="p-4">
+                        <div className="flex h-20 items-center justify-center">
+                          <p className="text-center font-semibold text-muted-foreground transition-colors hover:text-foreground">
+                            {partner.name}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
-            </Carousel>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+                <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+              </Carousel>
+            </div>
           </div>
         </section>
       </main>
