@@ -27,6 +27,7 @@ import {
 } from './ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { ExternalLink, Rss } from 'lucide-react';
+import { Badge } from './ui/badge';
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
