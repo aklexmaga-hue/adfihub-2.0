@@ -118,55 +118,54 @@ export type RoadmapStage = {
 
 export const ROADMAP_STAGES: RoadmapStage[] = [
     {
-        id: "q2-2024",
+        id: "q2-2025",
         name: "Platform Foundation & MVP",
         quarter: "Q2",
-        year: "2024",
+        year: "2025",
         features: [
             "Core Marketplace (Listings & Offers)",
             "Firebase Authentication (Email/Password, Google)",
-            "Admin Moderation Console V1",
             "Whitelist Application System",
-            "Initial Partner Directory"
+            "Initial Partner Directory & Static Pages"
         ],
         status: "Completed"
     },
     {
-        id: "q3-2024",
-        name: "AI & Web3 Integration",
+        id: "q3-2025",
+        name: "Business Model & Partner Acquisition",
         quarter: "Q3",
-        year: "2024",
+        year: "2025",
         features: [
-            "CPA/RevShare Estimator AI Tool",
-            "Campaign Bundle Generator AI Tool",
+            "Finalize business model and pricing structure",
+            "Actively seek and integrate key partners (On-ramp, Ad Networks)",
+            "Develop Admin Moderation Console V1",
             "Web3 Wallet Sign-in (WalletConnect/MetaMask)",
-            "On-chain Deposit Monitoring (Testnet)"
         ],
         status: "In Progress"
     },
     {
-        id: "q4-2024",
-        name: "Financial & Security Hardening",
+        id: "q4-2025",
+        name: "AI Tooling & Financial Hardening",
         quarter: "Q4",
-        year: "2024",
+        year: "2025",
         features: [
-            "Onramp Partner Integration (e.g., Transak, MoonPay)",
-            "KYC Gating for Withdrawals",
-            "App Check & reCAPTCHA Enterprise Rollout",
-            "Immutable Transaction Ledger V1"
+            "Launch CPA/RevShare Estimator AI Tool",
+            "Launch Campaign Bundle Generator AI Tool",
+            "Integrate Onramp Partner and KYC Gating",
+            "Implement Immutable Transaction Ledger V1"
         ],
         status: "Planned"
     },
     {
-        id: "q1-2025",
+        id: "q1-2026",
         name: "Scaling & Ecosystem Growth",
         quarter: "Q1",
-        year: "2025",
+        year: "2026",
         features: [
             "Public API for Partners",
-            "Dispute Resolution System",
+            "On-chain Dispute Resolution System",
             "Advanced Analytics Dashboard",
-            "Referral & Affiliate Program"
+            "Official Referral & Affiliate Program"
         ],
         status: "Planned"
     }
