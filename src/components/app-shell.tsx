@@ -35,8 +35,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-screen w-full">
-      <SidebarProvider>
+    <SidebarProvider>
+      <div className="flex h-screen w-full">
         <Sidebar>
           <SidebarHeader>
             <Link href="/" className="flex items-center gap-2">
@@ -145,7 +145,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
           </footer>
         </div>
-      </SidebarProvider>
-    </div>
+      </div>
+    </SidebarProvider>
   );
 }
