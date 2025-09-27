@@ -38,36 +38,93 @@ import Image from 'next/image';
 
 const trendingOffers = [
   {
-    title: 'Satoshi Slots',
+    title: 'BC.Game Casino',
     category: 'Gambling',
-    imageUrl: 'https://picsum.photos/seed/slots/400/200',
-    payout: '$300 CPA',
+    imageUrl: 'https://picsum.photos/seed/bcgame/400/200',
+    payout: '$400 CPA + 20% RevShare',
     geo: 'Tier 1',
-    hint: 'casino slot machine',
+    hint: 'crypto casino',
   },
   {
-    title: 'CryptoPunks NFT Drop',
-    category: 'NFT',
-    imageUrl: 'https://picsum.photos/seed/nft/400/200',
-    payout: '15% RevShare',
+    title: 'ByBit Exchange',
+    category: 'Crypto',
+    imageUrl: 'https://picsum.photos/seed/bybit/400/200',
+    payout: '40% RevShare',
     geo: 'Global',
-    hint: 'pixel art',
+    hint: 'crypto exchange',
   },
   {
-    title: 'DeFi Lend Protocol',
-    category: 'Finance',
-    imageUrl: 'https://picsum.photos/seed/defi/400/200',
-    payout: '$150 CPL',
+    title: 'NordVPN',
+    category: 'Software',
+    imageUrl: 'https://picsum.photos/seed/vpn/400/200',
+    payout: '50% Commission',
     geo: 'USA, EU',
-    hint: 'finance chart',
+    hint: 'cyber security',
   },
     {
-    title: 'P2E Kingdom Builder',
+    title: 'Axie Infinity',
     category: 'Gaming',
-    imageUrl: 'https://picsum.photos/seed/gaming/400/200',
-    payout: '$50 CPA',
+    imageUrl: 'https://picsum.photos/seed/axie/400/200',
+    payout: '$75 CPA',
     geo: 'SEA',
-    hint: 'fantasy game',
+    hint: 'play to earn',
+  },
+];
+
+const allOffers = [
+  {
+    id: 1,
+    title: "Roobet Casino",
+    description: "by Roobet",
+    category: "Gambling",
+    payout: "$350 CPA",
+    geo: "CA, DE, NO, FI",
+    traffic: "Google Ads, SEO",
+  },
+  {
+    id: 2,
+    title: "Ledger Wallet",
+    description: "by Ledger",
+    category: "Crypto",
+    payout: "10% Sale Commission",
+    geo: "Global",
+    traffic: "Content, Email",
+  },
+  {
+    id: 3,
+    title: "Manscaped",
+    description: "by Manscaped",
+    category: "E-commerce",
+    payout: "15% Commission",
+    geo: "USA, UK, AU",
+    traffic: "Facebook Ads, TikTok",
+  },
+  {
+    id: 4,
+    title: "eToro",
+    description: "by eToro",
+    category: "Finance",
+    payout: "$200 CPL",
+    geo: "EU, LATAM",
+    traffic: "Native Ads, Display",
+  },
+  {
+    id: 5,
+    title: "Star Atlas",
+    description: "by Star Atlas",
+    category: "Gaming",
+    payout: "$100 CPA",
+    geo: "Global",
+    traffic: "Twitch, YouTube",
+  },
+  {
+    id: 6,
+    title: "HelloFresh",
+    description: "by HelloFresh",
+    category: "E-commerce",
+    payout: "$20 Per Sale",
+    geo: "USA, CA",
+    traffic: "Influencers, Social",
   },
 ];
 
@@ -164,29 +221,29 @@ export default function MarketplacePage() {
         </Card>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <Card key={i} className="flex flex-col hover:border-primary/50 transition-colors">
+          {allOffers.map((offer) => (
+            <Card key={offer.id} className="flex flex-col hover:border-primary/50 transition-colors">
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <CardTitle className="font-headline text-lg">
-                    High-Roller Casino Offer
+                    {offer.title}
                   </CardTitle>
-                  <Badge variant="secondary">Gambling</Badge>
+                  <Badge variant="secondary">{offer.category}</Badge>
                 </div>
-                <CardDescription>by Roll & Win Casino</CardDescription>
+                <CardDescription>{offer.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-1 space-y-4">
                 <div className="flex items-center text-sm text-muted-foreground">
                   <Coins className="mr-2 h-4 w-4" />
-                  <span>$250 CPA</span>
+                  <span>{offer.payout}</span>
                 </div>
                 <div className="flex items-center text-sm text-muted-foreground">
                   <Globe className="mr-2 h-4 w-4" />
-                  <span>USA, Canada, UK</span>
+                  <span>{offer.geo}</span>
                 </div>
                 <div className="flex items-center text-sm text-muted-foreground">
                   <TrendingUp className="mr-2 h-4 w-4" />
-                  <span>Google Ads, Facebook Ads</span>
+                  <span>{offer.traffic}</span>
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between">

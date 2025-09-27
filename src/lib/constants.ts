@@ -93,17 +93,17 @@ export const PARTNERS: Partner[] = [
       'Advanced tracking and attribution SDK for dApps and Web3 projects.',
     url: '#',
     logoId: 'partner-tech-1',
-    integrationStatus: 'Planned',
+    integrationStatus: 'In Progress',
   },
   {
     id: 'p5',
     name: 'CryptoRamp',
     category: 'On-ramp / KYC',
     description:
-      'Seamless fiat-to-crypto on-ramping with built-in KYC solutions.',
+      'Searching for a seamless fiat-to-crypto on-ramping solution with built-in KYC.',
     url: '#',
     logoId: 'partner-onramp-1',
-    integrationStatus: 'Live',
+    integrationStatus: 'Planned',
   },
 ];
 
@@ -118,10 +118,10 @@ export type RoadmapStage = {
 
 export const ROADMAP_STAGES: RoadmapStage[] = [
     {
-        id: "q1-2025",
+        id: "q2-2024",
         name: "Platform Foundation & MVP",
-        quarter: "Q1",
-        year: "2025",
+        quarter: "Q2",
+        year: "2024",
         features: [
             "Core Marketplace (Listings & Offers)",
             "Firebase Authentication (Email/Password, Google)",
@@ -132,10 +132,10 @@ export const ROADMAP_STAGES: RoadmapStage[] = [
         status: "Completed"
     },
     {
-        id: "q2-2025",
+        id: "q3-2024",
         name: "AI & Web3 Integration",
-        quarter: "Q2",
-        year: "2025",
+        quarter: "Q3",
+        year: "2024",
         features: [
             "CPA/RevShare Estimator AI Tool",
             "Campaign Bundle Generator AI Tool",
@@ -145,10 +145,10 @@ export const ROADMAP_STAGES: RoadmapStage[] = [
         status: "In Progress"
     },
     {
-        id: "q3-2025",
+        id: "q4-2024",
         name: "Financial & Security Hardening",
-        quarter: "Q3",
-        year: "2025",
+        quarter: "Q4",
+        year: "2024",
         features: [
             "Onramp Partner Integration (e.g., Transak, MoonPay)",
             "KYC Gating for Withdrawals",
@@ -158,9 +158,9 @@ export const ROADMAP_STAGES: RoadmapStage[] = [
         status: "Planned"
     },
     {
-        id: "q4-2025",
+        id: "q1-2025",
         name: "Scaling & Ecosystem Growth",
-        quarter: "Q4",
+        quarter: "Q1",
         year: "2025",
         features: [
             "Public API for Partners",
@@ -179,8 +179,9 @@ export const VERTICALS = [
   'Gaming',
   'Health & Fitness',
   'SaaS',
+  'Crypto'
 ];
 
-export const TRAFFIC_SOURCES = ['Google Ads', 'Facebook Ads', 'TikTok Ads', 'Native Ads', 'Push Notifications', 'Email'];
-export const KPIS = ['CPA', 'ROI', 'ROAS', 'Conversion Rate'];
+export const TRAFFIC_SOURCES = ['Google Ads', 'Facebook Ads', 'TikTok Ads', 'Native Ads', 'Push Notifications', 'Email', 'SEO', 'Content', 'Social', 'Twitch', 'YouTube', 'Influencers'];
+export const KPIS = ['CPA', 'ROI', 'ROAS', 'Conversion Rate', 'CPL'];
 export const TRACKING_TYPES = ['Pixel', 'Postback', 'API'];
