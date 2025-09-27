@@ -217,7 +217,7 @@ const Sidebar = React.forwardRef<
       <aside
         ref={ref}
         className={cn("hidden md:flex flex-col transition-all duration-200 ease-in-out", 
-        state === 'expanded' ? 'w-[--sidebar-width]' : 'w-[--sidebar-width-icon]',
+        state === 'expanded' ? 'w-[var(--sidebar-width)]' : 'w-[var(--sidebar-width-icon)]',
         variant === 'sidebar' && 'border-r',
         variant === 'inset' && 'm-2 rounded-lg border shadow-sm',
         variant === 'floating' && 'm-2 rounded-lg border shadow-sm',
@@ -568,9 +568,11 @@ const SidebarMenuButton = React.forwardRef<
       }
     }
 
+    const trigger = asChild ? <Slot>{button}</Slot> : button
+
     return (
       <Tooltip>
-        <TooltipTrigger asChild>{button}</TooltipTrigger>
+        <TooltipTrigger asChild>{trigger}</TooltipTrigger>
         <TooltipContent
           side="right"
           align="center"
