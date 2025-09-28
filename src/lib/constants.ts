@@ -109,6 +109,16 @@ export const PARTNERS: Partner[] = [
     integrationStatus: 'In Progress',
   },
   {
+    id: 'p8',
+    name: 'Sumsub',
+    category: 'On-ramp / KYC',
+    description:
+      'An all-in-one identity verification platform that provides KYC, KYB, and AML solutions.',
+    url: 'https://sumsub.com',
+    logoId: 'partner-sumsub',
+    integrationStatus: 'Planned',
+  },
+  {
     id: 'p5',
     name: 'CryptoRamp',
     category: 'On-ramp / KYC',
