@@ -2,12 +2,10 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PARTNERS, type Partner } from '@/lib/constants';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Building } from 'lucide-react';
 import Image from 'next/image';
 
 const PartnerCard = ({ partner }: { partner: Partner }) => {
-  const logo = PlaceHolderImages.find(p => p.id === partner.logoId);
-
   const statusColor =
     partner.integrationStatus === 'Live'
       ? 'bg-green-100 text-green-800 border-green-300 dark:bg-green-900/50 dark:text-green-300 dark:border-green-700'
@@ -27,18 +25,9 @@ const PartnerCard = ({ partner }: { partner: Partner }) => {
             {partner.integrationStatus}
           </Badge>
         </div>
-        {logo && (
-          <div className="flex h-16 w-16 items-center justify-center rounded-lg border bg-background p-1">
-            <Image
-              src={logo.imageUrl}
-              alt={`${partner.name} logo`}
-              width={60}
-              height={60}
-              className="object-contain"
-              data-ai-hint={logo.imageHint}
-            />
-          </div>
-        )}
+        <div className="flex h-16 w-16 items-center justify-center rounded-lg border bg-secondary p-1">
+          <Building className="h-8 w-8 text-muted-foreground" />
+        </div>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col justify-between">
         <p className="mb-4 text-sm text-muted-foreground">

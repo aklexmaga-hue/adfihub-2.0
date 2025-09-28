@@ -1,12 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Group, Landmark } from 'lucide-react';
 import Image from 'next/image';
-
-const consensusCapitalLogo = PlaceHolderImages.find(
-  p => p.id === 'consensus-capital'
-);
-const targetMafiaLogo = PlaceHolderImages.find(p => p.id === 'target-mafia');
 
 export default function AboutPage() {
   return (
@@ -50,18 +45,11 @@ export default function AboutPage() {
             <CardHeader>
               <CardTitle>Developed By</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col items-center justify-center space-y-4">
-              {targetMafiaLogo && (
-                <Image
-                  src={targetMafiaLogo.imageUrl}
-                  alt={targetMafiaLogo.description}
-                  width={200}
-                  height={80}
-                  className="object-contain"
-                  data-ai-hint={targetMafiaLogo.imageHint}
-                />
-              )}
-              <p className="text-center text-muted-foreground">
+            <CardContent className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-secondary">
+                <Group className="h-12 w-12 text-muted-foreground" />
+              </div>
+              <p className="text-muted-foreground">
                 The Target Mafia arbitration/traffic team.
               </p>
             </CardContent>
@@ -70,18 +58,11 @@ export default function AboutPage() {
             <CardHeader>
               <CardTitle>Venture Investor</CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col items-center justify-center space-y-4">
-              {consensusCapitalLogo && (
-                <Image
-                  src={consensusCapitalLogo.imageUrl}
-                  alt={consensusCapitalLogo.description}
-                  width={200}
-                  height={80}
-                  className="object-contain"
-                  data-ai-hint={consensusCapitalLogo.imageHint}
-                />
-              )}
-              <p className="text-center text-muted-foreground">
+            <CardContent className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-secondary">
+                <Landmark className="h-12 w-12 text-muted-foreground" />
+              </div>
+              <p className="text-muted-foreground">
                 Proudly backed by Consesus Capital.
               </p>
             </CardContent>

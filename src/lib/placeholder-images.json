@@ -1,18 +1,6 @@
 {
   "placeholderImages": [
     {
-      "id": "target-mafia",
-      "description": "Target Mafia Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NTg5ODQ1MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "company logo"
-    },
-    {
-      "id": "consensus-capital",
-      "description": "Consensus Capital Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1593510987459-9a1489817a3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYXBpdGFsfGVufDB8fHx8MTc1OTAwMDM4OXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "capital"
-    },
-    {
       "id": "partner-stake",
       "description": "Stake.com Logo",
       "imageUrl": "https://storage.googleapis.com/studioprototype.appspot.com/project-assets/6baf06b1-4f11-424a-89a3-5c58b1932e6a",
@@ -25,28 +13,10 @@
       "imageHint": "logo 1win"
     },
     {
-      "id": "partner-ad-agency-1",
-      "description": "Ad Agency Partner 1",
-      "imageUrl": "https://images.unsplash.com/photo-1722891067479-5fd39edbfc3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxsb2dvJTIwbWFya2V0aW5nfGVufDB8fHx8MTc1ODk5Mjg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo marketing"
-    },
-    {
-      "id": "partner-traffic-1",
-      "description": "Traffic Network Partner 1",
-      "imageUrl": "https://images.unsplash.com/photo-1746608943026-e56ff017cd71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2dvJTIwbmV0d29ya3xlbnwwfHx8fDE3NTg5OTI4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo network"
-    },
-    {
-      "id": "partner-tech-1",
-      "description": "Tech Partner 1",
-      "imageUrl": "https://images.unsplash.com/photo-1758626104169-6835c0bd03e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsb2dvJTIwc29mdHdhcmV8ZW58MHx8fHwxNzU4OTkyODU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo software"
-    },
-    {
-      "id": "partner-onramp-1",
-      "description": "On-ramp Partner 1",
-      "imageUrl": "https://images.unsplash.com/photo-1554774853-d50f9c681ae2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bG9nbyUyMGZpbmFuY2V8ZW58MHx8fHwxNzU4OTc3NzQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "logo finance"
+      "id": "partner-bcgame",
+      "description": "BC.Game Logo",
+      "imageUrl": "https://storage.googleapis.com/studioprototype.appspot.com/project-assets/58f969a5-a35c-4f73-a55e-450f3b433f81",
+      "imageHint": "logo bcgame"
     }
   ]
 }

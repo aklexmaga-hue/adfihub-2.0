@@ -26,7 +26,7 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, UserCircle } from 'lucide-react';
 import React from 'react';
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -79,13 +79,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   variant="ghost"
                   className="relative h-8 w-8 rounded-full"
                 >
-                  <Avatar className="h-8 w-8">
-                    <AvatarImage
-                      src="https://picsum.photos/seed/user/100/100"
-                      alt="@user"
-                    />
-                    <AvatarFallback>U</AvatarFallback>
-                  </Avatar>
+                  <UserCircle className="h-8 w-8 text-muted-foreground" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end" forceMount>

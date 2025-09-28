@@ -32,6 +32,10 @@ import {
   TrendingUp,
   ShieldAlert,
   Flame,
+  Gem,
+  Bitcoin,
+  Server,
+  Gamepad2,
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -40,34 +44,30 @@ const trendingOffers = [
   {
     title: 'BC.Game Casino',
     category: 'Gambling',
-    imageUrl: 'https://picsum.photos/seed/bcgame/400/200',
     payout: '$400 CPA + 20% RevShare',
     geo: 'Tier 1',
-    hint: 'crypto casino',
+    icon: Gem,
   },
   {
     title: 'ByBit Exchange',
     category: 'Crypto',
-    imageUrl: 'https://picsum.photos/seed/bybit/400/200',
     payout: '40% RevShare',
     geo: 'Global',
-    hint: 'crypto exchange',
+    icon: Bitcoin,
   },
   {
     title: 'NordVPN',
     category: 'Software',
-    imageUrl: 'https://picsum.photos/seed/vpn/400/200',
     payout: '50% Commission',
     geo: 'USA, EU',
-    hint: 'cyber security',
+    icon: Server,
   },
     {
     title: 'Axie Infinity',
     category: 'Gaming',
-    imageUrl: 'https://picsum.photos/seed/axie/400/200',
     payout: '$75 CPA',
     geo: 'SEA',
-    hint: 'play to earn',
+    icon: Gamepad2,
   },
 ];
 
@@ -237,14 +237,9 @@ export default function MarketplacePage() {
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card className="overflow-hidden">
-                    <Image
-                      src={offer.imageUrl}
-                      alt={offer.title}
-                      width={400}
-                      height={200}
-                      className="w-full h-32 object-cover"
-                      data-ai-hint={offer.hint}
-                    />
+                    <div className="flex h-32 w-full items-center justify-center bg-secondary">
+                      <offer.icon className="h-12 w-12 text-muted-foreground" />
+                    </div>
                     <CardHeader className="p-4">
                       <CardTitle className="font-headline text-lg">{offer.title}</CardTitle>
                       <Badge variant="secondary" className="w-fit">{offer.category}</Badge>
