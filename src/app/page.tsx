@@ -26,6 +26,8 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/partners', label: 'Partners' },
   { href: '/roadmap', label: 'Roadmap' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export default function LandingPage() {
@@ -137,7 +139,7 @@ export default function LandingPage() {
               </Button>
             </div>
           </div>
-          <div className="order-1 mx-auto w-full max-w-sm md:order-2 md:max-w-none">
+          <div className="order-1 mx-auto w-full max-w-sm md:order-2 md:max-w-none flex flex-col-reverse">
             <div className="relative">
               <div className="absolute inset-0 -m-4 rounded-full bg-primary/10 blur-3xl"></div>
               <Image
@@ -214,6 +216,10 @@ export default function LandingPage() {
                 . Since 2025.
               </p>
             </div>
+             <div className="flex gap-4 text-sm text-muted-foreground">
+               <Link href="/terms" className="hover:text-primary hover:underline">Terms of Service</Link>
+               <Link href="/privacy" className="hover:text-primary hover:underline">Privacy Policy</Link>
+             </div>
             <p className="text-xs text-muted-foreground max-w-md">
               This is a demo version of the site. All content, including images
               and text, is for demonstration purposes and will be replaced.
@@ -236,7 +242,7 @@ export default function LandingPage() {
                 ADFIHUB LIMITED
               </a>
               <div className="flex items-center gap-2">
-                <Rss className="h-4 w-4" />
+                 <Rss className="h-4 w-4" />
                 <span className="text-muted-foreground/80">In Development</span>
               </div>
             </div>

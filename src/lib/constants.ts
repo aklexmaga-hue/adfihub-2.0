@@ -10,6 +10,8 @@ import {
   ShieldCheck,
   GitMerge,
   type LucideIcon,
+  Rss,
+  Mail,
 } from 'lucide-react';
 
 export type NavLink = {
@@ -25,6 +27,8 @@ export const NAV_LINKS: NavLink[] = [
   { href: '/ai-tools', label: 'AI Tools', icon: Bot },
   { href: '/partners', label: 'Partners', icon: Building },
   { href: '/about', label: 'About Us', icon: Users },
+  { href: '/blog', label: 'Blog', icon: Rss },
+  { href: '/contact', label: 'Contact', icon: Mail },
   { href: '/whitelist', label: 'Whitelist', icon: ShieldCheck },
   { href: '/deposit', label: 'Deposit', icon: DollarSign },
   { href: '/withdrawal', label: 'Withdrawal', icon: CreditCard },
