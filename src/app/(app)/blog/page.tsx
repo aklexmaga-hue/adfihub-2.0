@@ -9,7 +9,7 @@ const placeholderPosts = [
     title: 'The Future of Affiliate Marketing with Web3',
     description: 'Explore how blockchain technology is set to revolutionize the world of performance marketing, bringing transparency and trust to the forefront.',
     date: 'August 28, 2025',
-    author: 'Jane Doe',
+    author: 'The AdFiHub Team',
     content: `
 <p>The digital advertising landscape is ripe for disruption. For years, issues like fraud, lack of transparency, and payment inefficiencies have plagued the affiliate marketing industry. Web3, with its core tenets of decentralization, immutability, and user ownership, offers a compelling solution to these long-standing problems.</p>
 <br/>
@@ -26,7 +26,7 @@ const placeholderPosts = [
     title: 'AI in Media Buying: 5 Strategies to Maximize Your ROI',
     description: 'Our new AI tools are just the beginning. Learn about the strategies that will help you leverage artificial intelligence for campaign optimization.',
     date: 'August 25, 2025',
-    author: 'John Smith',
+    author: 'The AdFiHub Team',
         content: `
 <p>Artificial Intelligence is no longer a buzzword; it's a powerful tool that media buyers can use to gain a significant competitive edge. By analyzing vast datasets and identifying patterns invisible to the human eye, AI can optimize every aspect of your campaigns.</p>
 <br/>
